@@ -2,6 +2,7 @@
 title: Migration Rabbitmq
 categories: [blueking, migration]
 date: 2019-10-24 09:09:19
+tags: blueking
 ---
 # rabbitmq 迁移
 

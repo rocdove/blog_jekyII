@@ -2,6 +2,7 @@
 title: Migration MySql
 categories: [blueking, migration]
 date: 2019-10-24 09:09:19
+tags: blueking
 ---
 # MySQL服务迁移
 

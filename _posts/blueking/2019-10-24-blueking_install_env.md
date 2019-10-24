@@ -2,6 +2,7 @@
 title: Blueking Install evnironment
 categories: [blueking, install]
 date: 2019-10-24 09:09:19
+tags: blueking
 ---
 # 基础环境准备
 

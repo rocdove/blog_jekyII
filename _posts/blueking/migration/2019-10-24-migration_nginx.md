@@ -2,6 +2,7 @@
 title: Migration Nginx
 categories: [blueking, migration]
 date: 2019-10-24 09:09:19
+tags: blueking
 ---
 # nginx 迁移
 

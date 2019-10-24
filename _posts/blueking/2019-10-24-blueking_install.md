@@ -2,6 +2,7 @@
 title: Blueking Install
 categories: [blueking, install]
 date: 2019-10-24 09:10:19
+tags: blueking
 ---
 # blueking install
 

@@ -2,6 +2,7 @@
 title: Migration GSE and Redis
 categories: [blueking, migration]
 date: 2019-10-24 09:09:19
+tags: blueking
 ---
 # gse and redis 迁移
 

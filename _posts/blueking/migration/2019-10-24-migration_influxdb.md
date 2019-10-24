@@ -2,6 +2,7 @@
 title: Migration InfluxDB
 categories: [blueking, migration]
 date: 2019-10-24 09:09:19
+tags: blueking
 ---
 # influxdb 迁移
 
@@ -12,20 +13,26 @@ date: 2019-10-24 09:09:19
 
 ## 停止相关服务
 
-    ./bkcec stop bkdata
-    ./bkcec stop influxdb
+```bash
+./bkcec stop bkdata
+./bkcec stop influxdb
+```
 
 ## 备份数据库
 
-    rsync -av $INFLUXDB_IP:$INSTALL_PATH/public/influxdb /tmp/influxdb_migration_bak/
+```bash
+rsync -av $INFLUXDB_IP:$INSTALL_PATH/public/influxdb /tmp/influxdb_migration_bak/
+```
 
 ## 删除安装标记
 
-    ssh $INFLUXDB_IP "source /data/install/utils.fc; sed -i '/influxdb/d' $INSTALL_PATH/.installed_module; grep influxdb $INSTALL_PATH/.installed_module"
-    sed -i '/influxdb/d' /data/install/.bk_install.step; grep influxdb /data/install/.bk_install.step"
+```bash
+ssh $INFLUXDB_IP "source /data/install/utils.fc; sed -i '/influxdb/d' $INSTALL_PATH/.installed_module; grep influxdb $INSTALL_PATH/.installed_module"
+sed -i '/influxdb/d' /data/install/.bk_install.step; grep influxdb /data/install/.bk_install.step"
 
-    # 删除consul对应服务配置
-    ssh ${INFLUXDB_IP} "source /data/install/utils.fc; rm -f $INSTALL_PATH/etc/consul.d/influxdb.json"
+# 删除consul对应服务配置
+ssh ${INFLUXDB_IP} "source /data/install/utils.fc; rm -f $INSTALL_PATH/etc/consul.d/influxdb.json"
+```
 
 ## 配置install.config
 
@@ -35,42 +42,56 @@ date: 2019-10-24 09:09:19
 
 ## 新机器配置好中控机的 ssh 免密登陆
 
-    ./configure_ssh_without_pass
+```bash
+./configure_ssh_without_pass
+```
 
 ## 同步文件
 
-    ./bkcec sync common
-    ./bkcec sync consul
-    ./bkcec sync influxdb
+```bash
+./bkcec sync common
+./bkcec sync consul
+./bkcec sync influxdb
+```
 
 ## 安装consul，并重启服务
 
-    ./bkcec install consul
-    
-    ./bkcec stop consul
-    ./bkcec start consul
+```bash
+./bkcec install consul
+
+./bkcec stop consul
+./bkcec start consul
+```
 
 ## 安装 influxdb
 
-    ./bkcec install influxdb
+```bash
+./bkcec install influxdb
+```
 
 ## 存入备份数据
 
-    source utils.fc
-    rsync -av /tmp/influxdb_migration_bak/influxdb $INFLUXDB_IP:$INSTALL_PATH/public/
-    ssh $INFLUXDB_IP "source /data/install/utils.fc; chown -R influxdb:influxdb $INSTALL_PATH/public/influxdb; ls -l $INSTALL_PATH/public/influxdb"
+```bash
+source utils.fc
+rsync -av /tmp/influxdb_migration_bak/influxdb $INFLUXDB_IP:$INSTALL_PATH/public/
+ssh $INFLUXDB_IP "source /data/install/utils.fc; chown -R influxdb:influxdb $INSTALL_PATH/public/influxdb; ls -l $INSTALL_PATH/public/influxdb"
+```
 
 ## 给新机器授予mysql权限（非新机器时无需执行）
 
-    ./bkcec initdata mysql
+```bash
+./bkcec initdata mysql
+```
 
 ## 重新渲染相关模块配置，并重启服务（注意启动顺序）
 
-    ./bkcec render influxdb
-    ./bkcec render bkdata
+```bash
+./bkcec render influxdb
+./bkcec render bkdata
 
-    ./bkcec start influxdb
-    ./bkcec start bkdata
+./bkcec start influxdb
+./bkcec start bkdata
+```
 
 ## 在CMDB界面上，进入业务拓扑，把公共组件下的mysql模块下的老机器转移到空闲机
 
@@ -80,8 +101,10 @@ date: 2019-10-24 09:09:19
 
 ## 重新安装gse-agent
 
-    # 给新机器添加gse_agent，给模块配置变动的机器从新部署gse_agent.并注册到CMDB。
-    ./bkcec install gse_agent
+```bash
+# 给新机器添加gse_agent，给模块配置变动的机器从新部署gse_agent.并注册到CMDB。
+./bkcec install gse_agent
+```
 
 ## 检查服务是否正常
 

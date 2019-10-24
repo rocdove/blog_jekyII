@@ -2,6 +2,7 @@
 title: Migration JOB
 categories: [blueking, migration]
 date: 2019-10-24 09:09:19
+tags: blueking
 ---
 # Job迁移
 

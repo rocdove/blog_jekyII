@@ -2,6 +2,7 @@
 title: Migration License
 categories: [blueking, migration]
 date: 2019-10-24 09:09:19
+tags: blueking
 ---
 # license 迁移
 
