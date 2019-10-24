@@ -41,12 +41,13 @@ body {
 }
 
 html {
-  font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  font-family: "PT Serif", Georgia, "Microsoft YaHei", "Times New Roman", serif; /*PT Serif*/
+  font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-family: "PT Sans", Helvetica, "Microsoft Yahei", "PingFang SC", Arial, sans-serif;
+  font-weight: 700;
   color: #313131;
   letter-spacing: -.025rem;
 }
@@ -82,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 56em) {
   .container {
-    max-width: 38rem;
+    max-width: 50rem; /*38*/
   }
 }
 
@@ -94,6 +95,7 @@ h1, h2, h3, h4, h5, h6 {
  */
 
 .masthead {
+  padding-left: 5rem; /*增加*/
   padding-top:    1rem;
   padding-bottom: 1rem;
   margin-bottom: 3rem;
@@ -115,6 +117,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 48em) {
+  .masthead {
+    padding-left: 0;
+  }
   .masthead-title {
     text-align: center;
   }
@@ -202,7 +207,7 @@ a.sidebar-nav-item:focus {
 
 /* Hide the sidebar checkbox that we toggle with `.sidebar-toggle` */
 .sidebar-checkbox {
-  position: absolute;
+  position: relative;
   opacity: 0;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -211,13 +216,13 @@ a.sidebar-nav-item:focus {
 
 /* Style the `label` that we use to target the `.sidebar-checkbox` */
 .sidebar-toggle {
-  position: absolute;
+  position: relative;
   top:  .8rem;
   left: 1rem;
   display: block;
   padding: .25rem .75rem;
   color: #505050;
-  background-color: #fff;
+  background-color: transparent; /*修改颜色#fff;*/
   border-radius: .25rem;
   cursor: pointer;
 }
@@ -227,26 +232,26 @@ a.sidebar-nav-item:focus {
   width: 1rem;
   height: .75rem;
   content: "";
-  background-image: -webkit-linear-gradient(to bottom, #d3f7f1, #d3f7f1 20%, #90ca9f 20%, #90ca9f 40%, #d3f7f1 40%, #d3f7f1 60%, #90ca9f 60%, #90ca9f 80%, #d3f7f1 80%, #d3f7f1 100%);
-  background-image:    -moz-linear-gradient(to bottom, #d3f7f1, #d3f7f1 20%, #90ca9f 20%, #90ca9f 40%, #d3f7f1 40%, #d3f7f1 60%, #90ca9f 60%, #90ca9f 80%, #d3f7f1 80%, #d3f7f1 100%);
-  background-image:     -ms-linear-gradient(to bottom, #d3f7f1, #d3f7f1 20%, #90ca9f 20%, #90ca9f 40%, #d3f7f1 40%, #d3f7f1 60%, #90ca9f 60%, #90ca9f 80%, #d3f7f1 80%, #d3f7f1 100%);
-  background-image:         linear-gradient(to bottom, #d3f7f1, #d3f7f1 20%, #90ca9f 20%, #90ca9f 40%, #d3f7f1 40%, #d3f7f1 60%, #90ca9f 60%, #90ca9f 80%, #d3f7f1 80%, #d3f7f1 100%);
+  background-image: -webkit-linear-gradient(to bottom, #555, #555 20%, #fff 20%, #fff 40%, #555 40%, #555 60%, #fff 60%, #fff 80%, #555 80%, #555 100%);
+  background-image:    -moz-linear-gradient(to bottom, #555, #555 20%, #fff 20%, #fff 40%, #555 40%, #555 60%, #fff 60%, #fff 80%, #555 80%, #555 100%);
+  background-image:     -ms-linear-gradient(to bottom, #555, #555 20%, #fff 20%, #fff 40%, #555 40%, #555 60%, #fff 60%, #fff 80%, #555 80%, #555 100%);
+  background-image:         linear-gradient(to bottom, #555, #555 20%, #fff 20%, #fff 40%, #555 40%, #555 60%, #fff 60%, #fff 80%, #555 80%, #555 100%);
 }
 
 .sidebar-toggle:active,
 #sidebar-checkbox:focus ~ .sidebar-toggle,
 #sidebar-checkbox:checked ~ .sidebar-toggle {
-  color: #90ca9f;
-  background-color: #555;
+  color: #F5F5FA; /*修改颜色#fff;*/
+  background-color: transparent; /*修改颜色#555;*/
 }
 
 .sidebar-toggle:active:before,
 #sidebar-checkbox:focus ~ .sidebar-toggle:before,
 #sidebar-checkbox:checked ~ .sidebar-toggle:before {
-  background-image: -webkit-linear-gradient(to bottom, #90ca9f, #90ca9f 20%, #d3f7f1 20%, #d3f7f1 40%, #90ca9f 40%, #90ca9f 60%, #d3f7f1 60%, #d3f7f1 80%, #90ca9f 80%, #90ca9f 100%);
-  background-image:    -moz-linear-gradient(to bottom, #90ca9f, #90ca9f 20%, #d3f7f1 20%, #d3f7f1 40%, #90ca9f 40%, #90ca9f 60%, #d3f7f1 60%, #d3f7f1 80%, #90ca9f 80%, #90ca9f 100%);
-  background-image:     -ms-linear-gradient(to bottom, #90ca9f, #90ca9f 20%, #d3f7f1 20%, #d3f7f1 40%, #90ca9f 40%, #90ca9f 60%, #d3f7f1 60%, #d3f7f1 80%, #90ca9f 80%, #90ca9f 100%);
-  background-image:         linear-gradient(to bottom, #90ca9f, #90ca9f 20%, #d3f7f1 20%, #d3f7f1 40%, #90ca9f 40%, #90ca9f 60%, #d3f7f1 60%, #d3f7f1 80%, #90ca9f 80%, #90ca9f 100%);
+  background-image: -webkit-linear-gradient(to bottom, #fff, #fff 20%, #555 20%, #555 40%, #fff 40%, #fff 60%, #555 60%, #555 80%, #fff 80%, #fff 100%);
+  background-image:    -moz-linear-gradient(to bottom, #fff, #fff 20%, #555 20%, #555 40%, #fff 40%, #fff 60%, #555 60%, #555 80%, #fff 80%, #fff 100%);
+  background-image:     -ms-linear-gradient(to bottom, #fff, #fff 20%, #555 20%, #555 40%, #fff 40%, #fff 60%, #555 60%, #555 80%, #fff 80%, #fff 100%);
+  background-image:         linear-gradient(to bottom, #fff, #fff 20%, #555 20%, #555 40%, #fff 40%, #fff 60%, #555 60%, #555 80%, #fff 80%, #fff 100%);
 }
 
 @media (min-width: 30.1em) {
@@ -328,7 +333,7 @@ a.sidebar-nav-item:focus {
   display: block;
   margin-top: -.5rem;
   margin-bottom: 1rem;
-  color: #9a9a9a;
+  color: #313131;
 }
 
 /* Related posts */
@@ -489,16 +494,16 @@ a.pagination-item:hover {
   color: #90a959;
 }
 
-/* Cyan */
+/* SteelBlue */
 .theme-base-0c .sidebar,
 .theme-base-0c .sidebar-toggle:active,
 .theme-base-0c #sidebar-checkbox:checked ~ .sidebar-toggle {
-  background-color: #75b5aa;
+  background-color: SteelBlue;
 }
 .theme-base-0c .container a,
 .theme-base-0c .sidebar-toggle,
 .theme-base-0c .related-posts li a:hover {
-  color: #75b5aa;
+  color: SteelBlue;
 }
 
 /* Blue */
@@ -551,7 +556,7 @@ a.pagination-item:hover {
           transform: translateX(0);
 }
 .sidebar-overlay #sidebar-checkbox:checked ~ .sidebar-toggle {
-  box-shadow: 0 0 0 .25rem #fff;
+  box-shadow: 0 0 0 .25rem transparent;/*修改颜色#fff;*/
 }
 .sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: .25rem 0 .5rem rgba(0,0,0,.1);

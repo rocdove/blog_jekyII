@@ -59,8 +59,8 @@ html {
 }
 
 body {
-  color: #515151;
-  background-color: #c0e4c9;
+  color: #444444;
+  background-color: #fff;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -76,7 +76,7 @@ a strong {
 /* `:focus` is linked to `:hover` for basic accessibility */
 a:hover,
 a:focus {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Headings */
@@ -155,8 +155,10 @@ pre {
 code {
   padding: .25em .5em;
   font-size: 85%;
+  font-weight: bold; /*增加*/
+  line-height: 0.5;
   color: #bf616a;
-  background-color: #c6eedf;
+  background-color: transparent; /*修改颜色#f9f9f9;*/
   border-radius: 3px;
 }
 pre {
@@ -214,8 +216,8 @@ pre code {
 blockquote {
   padding: .5rem 1rem;
   margin: .8rem 0;
-  color: #7a7a7a;
-  border-left: .25rem solid #e5e5e5;
+  color: #696969; /*修改颜色#7a7a7a*/
+  border-left: .25rem solid + #303030; /*修改颜色#e5e5e5;*/
 }
 blockquote p:last-child {
   margin-bottom: 0;
@@ -238,17 +240,17 @@ img {
 table {
   margin-bottom: 1rem;
   width: 100%;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #000000; /*修改颜色#e5e5e5*/
   border-collapse: collapse;
 }
 td,
 th {
   padding: .25rem .5rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid #000000; /*修改颜色#e5e5e5*/
 }
 tbody tr:nth-child(odd) td,
 tbody tr:nth-child(odd) th {
-  background-color: #f9f9f9;
+  background-color: transparent; /*修改颜色#f9f9f9;*/
 }
 
 
@@ -349,7 +351,7 @@ tbody tr:nth-child(odd) th {
   display: block;
   margin-top: -.5rem;
   margin-bottom: 1rem;
-  color: #9a9a9a;
+  color: #313131;
 }
 
 /* Related posts */
