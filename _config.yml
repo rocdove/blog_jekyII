@@ -109,12 +109,6 @@ head: # 删改前确定知道自己在做什么
   - key: rel
     value: stylesheet
   - key: href
-    value: /public/css/ender.css
-- tag: link
-  var:
-  - key: rel
-    value: stylesheet
-  - key: href
     value: //cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.css # 在https://fontawesome.com/icons 查看支持的图标
 
 body:
