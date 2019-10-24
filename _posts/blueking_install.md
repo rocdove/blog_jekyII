@@ -3,7 +3,7 @@ title: Blueking Install
 categories: [blueking, install]
 date: 2019-10-24 09:10:19
 ---
-# install
+# blueking install
 
 ## 注意项
 
@@ -28,7 +28,7 @@ date: 2019-10-24 09:10:19
 
 ### 配置 pip 源
 
-```markdown
+```bash
 # 公网访问
 cat <<EOF > /data/src/.pip/pip.conf
 [global]
@@ -46,7 +46,7 @@ EOF
 
 ### 安装命令
 
-```markdown
+```bash
 ./configure_ssh_without_pass
 ./precheck.sh -r
 
