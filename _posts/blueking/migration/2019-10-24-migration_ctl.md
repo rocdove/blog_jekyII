@@ -1,3 +1,8 @@
+---
+title: Migration CTL
+categories: [blueking, migration]
+date: 2019-10-24 09:09:19
+---
 # 中控机迁移
 
 ## 迁移到新机器(没有蓝鲸组件部署的机器)
