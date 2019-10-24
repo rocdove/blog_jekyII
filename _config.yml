@@ -5,7 +5,7 @@ kramdown:
 permalink: /posts/:categories/:title # 博文目录
 baseurl: "" # 假如你的博客是建在某个目录下的，请在这里加上目录名，并且下面配置的所有链接里的`/public`前也要加，即`/your_baseurl/public`。这一项结尾不要有'/'
 
-title: RocDove
+title: 首页
 url: http://rocdove.github.io
 author: RocDove
 
@@ -79,25 +79,19 @@ head: # 删改前确定知道自己在做什么
   - key: rel
     value: stylesheet
   - key: href
-    value: /public/css/poole.css # 用cdn加速会出问题，暂时不知道为什么
+    value: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io/public/css/poole.css # 用cdn加速会出问题，暂时不知道为什么
 - tag: link
   var:
   - key: rel
     value: stylesheet
   - key: href
-    value: /public/css/syntax.css
+    value: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io/public/css/syntax.css
 - tag: link
   var:
   - key: rel
     value: stylesheet
   - key: href
-    value: /public/css/lanyon.css
-- tag: link
-  var:
-  - key: rel
-    value: stylesheet
-  - key: href
-    value: /public/css/style.css
+    value: //cdn.jsdelivr.net/gh/wu-kan/wu-kan.github.io/public/css/lanyon.css
 - tag: link
   var:
   - key: rel
@@ -156,43 +150,43 @@ script: # 需要在正文后调用的脚本或者插件的autoloader
   - key: src
     value: /public/js/baidu_push.js
 
-PrismJS: # 代码高亮插件，可以在https://prismjs.com/download.html自己定制，我这里只导入了三个自己喜欢的插件。
-  enable: true
-  src: //cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js # Todo：把它加入autoloader
-  stylesheet: //cdn.jsdelivr.net/npm/prismjs/themes/prism-coy.css # 在https://github.com/PrismJS/prism/tree/master/themes 内查看可用主题，或者也可以搜一些第三方主题
-  plugins:
-    line_numbers:
-      enable: true
-      src: //cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
-      stylesheet: //cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.css
-    autoloader: # 根据语言自动加载的高亮插件
-      enable: true
-      src: //cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
-      languages_path: //cdn.jsdelivr.net/npm/prismjs/components/
-    toolbar:
-      enable: true
-      src: //cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.js # Todo：把它加入autoloader
-      stylesheet: //cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.css
-      select_code: # 我这里只实现了一个按钮，可以使用`Prism.plugins.toolbar.registerButton`提供的api自己定制
-        enable: true
-        alert: 选中这段
-
-# PrismJS: # 代码高亮插件，可以在https://prismjs.com/download.html自己定制，将定制的js和css替换我的/public/PrismJS下的对应文件即可。我这里只导入了三个自己喜欢的插件。
+# PrismJS: # 代码高亮插件，可以在https://prismjs.com/download.html自己定制，我这里只导入了三个自己喜欢的插件。
 #   enable: true
-#   script:
-#     - src: //cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js
-#       stylesheet: //cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css
-#     - src: //cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
-#     - src: //cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
-#       stylesheet: //cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.css
-#     - src: //cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.js
-#       stylesheet: //cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.css
+#   src: //cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js # Todo：把它加入autoloader
+#   stylesheet: //cdn.jsdelivr.net/npm/prismjs/themes/prism-coy.css # 在https://github.com/PrismJS/prism/tree/master/themes 内查看可用主题，或者也可以搜一些第三方主题
 #   plugins:
-#     line_numbers: true
-#     autoloader: //cdn.jsdelivr.net/npm/prismjs/components/ # 根据语言自动加载的高亮插件
+#     line_numbers:
+#       enable: true
+#       src: //cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
+#       stylesheet: //cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.css
+#     autoloader: # 根据语言自动加载的高亮插件
+#       enable: true
+#       src: //cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
+#       languages_path: //cdn.jsdelivr.net/npm/prismjs/components/
 #     toolbar:
-#       select_code:
+#       enable: true
+#       src: //cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.js # Todo：把它加入autoloader
+#       stylesheet: //cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.css
+#       select_code: # 我这里只实现了一个按钮，可以使用`Prism.plugins.toolbar.registerButton`提供的api自己定制
 #         enable: true
+#         alert: Selected
+
+PrismJS: # 代码高亮插件，可以在https://prismjs.com/download.html自己定制，将定制的js和css替换我的/public/PrismJS下的对应文件即可。我这里只导入了三个自己喜欢的插件。
+  enable: true
+  script:
+    - src: //cdn.jsdelivr.net/npm/prismjs/components/prism-core.min.js
+      stylesheet: //cdn.jsdelivr.net/npm/prismjs/themes/prism-tomorrow.css
+    - src: //cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js
+    - src: //cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
+      stylesheet: //cdn.jsdelivr.net/npm/prismjs/plugins/line-numbers/prism-line-numbers.css
+    - src: //cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.min.js
+      stylesheet: //cdn.jsdelivr.net/npm/prismjs/plugins/toolbar/prism-toolbar.css
+  plugins:
+    line_numbers: true
+    autoloader: //cdn.jsdelivr.net/npm/prismjs/components/ # 根据语言自动加载的高亮插件
+    toolbar:
+      select_code:
+        enable: true
 
 sidebar:
   avatar: # 侧边栏显示的头像
